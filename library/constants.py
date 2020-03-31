@@ -1,12 +1,14 @@
 """Constants used in the whole project."""
 import pathlib
+import os
+import sys
 
 PROGRAM_NAME = "Start Menu Helper"
 VERSION_NUMBER = "1.0.3"
 ICON_FILE_NAME = "icon.ico"
 TIME_BETWEEN_SCANS_IN_MINUTES = 5
 APP_DATA_PATH = pathlib.Path.home().joinpath("AppData")
-CONFIGURATION_PATH = APP_DATA_PATH.joinpath("Roaming").joinpath(PROGRAM_NAME)
+CONFIGURATION_PATH = pathlib.Path(os.sys.path[0]).parent.joinpath("configurations").joinpath("start-menu-helper")
 CONFIGURATION_FILE_PATH = CONFIGURATION_PATH.joinpath("config.ini")
 LOG_FILE_PATH = CONFIGURATION_PATH.joinpath("log.txt")
 STARTUP_PATH = pathlib.Path.home().drive + \
